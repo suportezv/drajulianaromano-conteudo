@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Setup do Dra. Juliana Romano Conteúdo Studio (Linux/cloud). No Mac, siga SETUP.md manualmente.
+# Setup do estúdio de conteúdo (Linux/cloud). Agnóstico de marca: o symlink usa o
+# nome da pasta do repo. No Mac, siga SETUP.md manualmente.
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -38,8 +39,9 @@ python3 -c 'import PIL' 2>/dev/null || pip3 install pillow
 python3 -c 'import numpy' 2>/dev/null || pip3 install numpy
 
 echo "== 5/5 estúdio =="
-ln -sfn "$REPO_ROOT" ~/drajulianaromano-conteudo
-echo "~/drajulianaromano-conteudo -> $REPO_ROOT"
+STUDIO_NAME="$(basename "$REPO_ROOT")"
+ln -sfn "$REPO_ROOT" ~/"$STUDIO_NAME"
+echo "~/$STUDIO_NAME -> $REPO_ROOT"
 
 if [ ! -f "$VIDEO_USE/.env" ]; then
   echo "PENDENTE: gravar ELEVENLABS_API_KEY em $VIDEO_USE/.env (peça ao usuário; chave sk_ de 51 chars)"

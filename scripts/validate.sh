@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Validação do Dra. Juliana Romano Conteúdo Studio. Itens de MCP (Metricool, Kairogen)
-# validam-se dentro da sessão do Claude, não aqui.
+# Validação do estúdio de conteúdo (agnóstico de marca). Itens de MCP
+# (Metricool, Kairogen) validam-se dentro da sessão do Claude, não aqui.
 set -uo pipefail
 
 TOOLS_DIR="${TOOLS_DIR:-/workspace}"
@@ -38,5 +38,5 @@ ls ~/.claude/skills 2>/dev/null | grep -q hyperframes && echo "OK hyperframes" |
 
 echo "== 5. Na sessão do Claude, validar ainda: =="
 echo " - Rede: curl a drive.google.com deve responder HTTP (environment com domínios liberados)"
-echo " - Metricool: getBrandSettings deve listar a marca da Dra. Juliana Romano (PENDENTE conectar; blog_id PENDENTE)"
+echo " - Metricool: getBrandSettings deve listar a marca deste estúdio com o blog_id documentado no CLAUDE.md"
 echo " - Kairogen: get_me_context mostra plano Essential+ e créditos"
