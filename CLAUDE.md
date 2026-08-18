@@ -22,10 +22,10 @@ Este repositório é o **Dra. Juliana Romano Conteúdo Studio**: edição e agen
 ## IDs e contas
 
 - Instagram da marca: **PENDENTE** (handle e demais redes conectadas).
-- Metricool: conta da agência **suporte@zavi.ag**. Marca desta criadora no painel: **PENDENTE conectar/confirmar (blog_id PENDENTE)**, timezone America/Sao_Paulo. Melhor horário de publicação: medir com getBestTimeToPostByNetwork após conectar.
+- Metricool: conta da agência **suporte@zavi.ag** (conector MCP autorizado e validado em 2026-08-18). Marca desta criadora no painel: **PENDENTE conectar (blog_id PENDENTE)**, timezone America/Sao_Paulo. Em 2026-08-18 o painel só tinha a marca "drvictorferigato" (blog_id 6606429). Melhor horário de publicação: medir com getBestTimeToPostByNetwork após conectar.
 - **Regra de agendamento (todas as marcas da agência)**: sempre incluir TODOS os canais conectados da marca no post, exceto YouTube horizontal. YouTube entra como **Short** (`youtubeData: {type: "short", title, madeForKids: false}`); Instagram como REEL; Facebook como REEL; TikTok, LinkedIn e Pinterest com networkData padrão. Nunca publicar vídeo vertical como YouTube horizontal comum.
-- Kairogen: conta suporte@zavi.ag, plano Essential (`veo3-1-lite` para vídeo).
-- ElevenLabs: chave em `.env` na raiz do video-use (transcrição Scribe + SFX/trilha + TTS). Voz da marca para narração: **PENDENTE (voice_id, modelo e settings)**.
+- Kairogen: conta suporte@zavi.ag. Em 2026-08-18 o plano estava **FREE com 0 créditos** (contratação de plano pago a caminho, confirmar antes de usar para b-roll).
+- ElevenLabs: chave `sk_` (51 chars) na env var `ELEVENLABS_API_KEY` do environment; o setup grava em `.env` na raiz do video-use. Validada em 2026-08-18: TTS, STT Scribe (timestamps por palavra), sound-generation e voices_read todos OK. **Atenção: plano free (10.000 chars/mês, sem instant voice cloning)**; para produção contínua e voz clonada da marca, precisa de upgrade. Voz da marca para narração: **PENDENTE (voice_id, modelo e settings)**.
 - Drive (brutos): pasta do projeto **PENDENTE: criar/apontar** (padrão: pasta com "qualquer pessoa com o link: leitor" para download direto).
 
 ## Gotchas essenciais (herdados do ana-conteudo/eita-conteudo, todos validados)
