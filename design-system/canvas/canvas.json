@@ -53,6 +53,14 @@
       "w": 1080,
       "h": 1350,
       "title": "Capa Instagram · Body on Top"
+    },
+    {
+      "file": "BannerYouTube.dc.html",
+      "x": 0,
+      "y": 3810,
+      "w": 2048,
+      "h": 1152,
+      "title": "Banner YouTube"
     }
   ],
   "annotations": [
@@ -76,6 +84,13 @@
       "y": 2260,
       "w": 320,
       "text": "Fontes oficiais do site: Playfair Display (display) e Montserrat (apoio), via Google Fonts. Na exportação PNG/PDF o texto sai na fonte reserva (Georgia / Segoe UI)."
+    },
+    {
+      "id": "nota-banner",
+      "x": 2130,
+      "y": 3810,
+      "w": 340,
+      "text": "Banner do canal 2048x1152; o conteudo esta dentro da area segura de 1235x338 (visivel em todos os dispositivos). Substitui o banner verde atual do canal, que fica como legado. Exportar em PNG direto daqui."
     }
   ],
   "launch": {
