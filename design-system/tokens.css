@@ -1,0 +1,24 @@
+/* Design tokens · Dra. Juliana Romano · v1 (2026-09-01) */
+:root {
+  /* Primárias */
+  --jr-french-blue: #7A96B8;
+  --jr-gold: #C9A24B;
+  --jr-navy: #2B3A5E;
+  /* Apoio */
+  --jr-champagne: #E6CFA9;
+  --jr-ivory: #F6F1E6;
+  /* Derivadas */
+  --jr-navy-ink: #1C2740;      /* texto profundo sobre claro */
+  --jr-blue-mist: #BFC9DC;     /* texto secundário sobre navy */
+  --jr-gold-deep: #A8852F;     /* hover/borda do gold */
+  --jr-line: #E3DCCB;          /* bordas sobre ivory */
+
+  /* Tipografia */
+  --jr-font-display: 'Cormorant Garamond', Georgia, serif;
+  --jr-font-body: 'Jost', 'Segoe UI', system-ui, sans-serif;
+  --jr-h1: 600 64px/1.05 var(--jr-font-display);
+  --jr-h2: 600 40px/1.15 var(--jr-font-display);
+  --jr-body: 400 18px/1.6 var(--jr-font-body);
+  --jr-eyebrow-tracking: 0.38em;
+  --jr-caps-tracking: 0.12em;
+}

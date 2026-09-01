@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600;700&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Jost', 'Segoe UI', system-ui, sans-serif; }
+    a { color: #C9A24B; } a:hover { color: #A8852F; }
+  </style>
+</helmet>
+<div style="width: 1200px; background: #F6F1E6; box-sizing: border-box; padding: 56px 64px; display: flex; flex-direction: column; gap: 32px">
+  <div style="display: flex; flex-direction: column; gap: 6px">
+    <div style="font-size: 14px; letter-spacing: 0.38em; text-transform: uppercase; color: #C9A24B">Design System</div>
+    <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 44px; color: #2B3A5E">Paleta de cores</div>
+  </div>
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <div style="display: flex; align-items: center; justify-content: space-between; background: #7A96B8; border-radius: 4px; padding: 30px 36px">
+      <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; letter-spacing: 0.3em; text-transform: uppercase; color: #FFFFFF">French Blue</div>
+      <div style="display: flex; gap: 28px; align-items: center">
+        <div style="font-size: 15px; letter-spacing: 0.1em; color: #EAF0F7">#7A96B8</div>
+        <div style="font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #FFFFFF; border: 1px solid rgba(255,255,255,0.55); border-radius: 999px; padding: 6px 16px">Primária</div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: space-between; background: #C9A24B; border-radius: 4px; padding: 30px 36px">
+      <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; letter-spacing: 0.3em; text-transform: uppercase; color: #FFFFFF">Gold</div>
+      <div style="display: flex; gap: 28px; align-items: center">
+        <div style="font-size: 15px; letter-spacing: 0.1em; color: #FBF3DF">#C9A24B</div>
+        <div style="font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #FFFFFF; border: 1px solid rgba(255,255,255,0.55); border-radius: 999px; padding: 6px 16px">Primária</div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: space-between; background: #2B3A5E; border-radius: 4px; padding: 30px 36px">
+      <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; letter-spacing: 0.3em; text-transform: uppercase; color: #FFFFFF">Navy</div>
+      <div style="display: flex; gap: 28px; align-items: center">
+        <div style="font-size: 15px; letter-spacing: 0.1em; color: #C9D2E4">#2B3A5E</div>
+        <div style="font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #FFFFFF; border: 1px solid rgba(255,255,255,0.55); border-radius: 999px; padding: 6px 16px">Primária</div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: space-between; background: #E6CFA9; border-radius: 4px; padding: 24px 36px">
+      <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; letter-spacing: 0.3em; text-transform: uppercase; color: #5A4A2A">Champagne</div>
+      <div style="display: flex; gap: 28px; align-items: center">
+        <div style="font-size: 15px; letter-spacing: 0.1em; color: #6E5B34">#E6CFA9</div>
+        <div style="font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #6E5B34; border: 1px solid rgba(110,91,52,0.4); border-radius: 999px; padding: 6px 16px">Apoio</div>
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; justify-content: space-between; background: #FFFFFF; border: 1px solid #E3DCCB; border-radius: 4px; padding: 24px 36px">
+      <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; letter-spacing: 0.3em; text-transform: uppercase; color: #7B6F52">Ivory</div>
+      <div style="display: flex; gap: 28px; align-items: center">
+        <div style="font-size: 15px; letter-spacing: 0.1em; color: #8A7E5F">#F6F1E6</div>
+        <div style="font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; color: #8A7E5F; border: 1px solid #D8CFB8; border-radius: 999px; padding: 6px 16px">Apoio</div>
+      </div>
+    </div>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px">
+    <div style="background: #FFFFFF; border: 1px solid #E3DCCB; border-radius: 4px; padding: 22px 24px; display: flex; flex-direction: column; gap: 8px">
+      <div style="font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; color: #C9A24B">Proporção</div>
+      <div style="font-size: 16px; line-height: 1.55; color: #3C4560">Ivory e Champagne como base (60%), Navy e French Blue na estrutura (30%), Gold só como destaque (10%).</div>
+    </div>
+    <div style="background: #FFFFFF; border: 1px solid #E3DCCB; border-radius: 4px; padding: 22px 24px; display: flex; flex-direction: column; gap: 8px">
+      <div style="font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; color: #C9A24B">Texto</div>
+      <div style="font-size: 16px; line-height: 1.55; color: #3C4560">Texto longo sempre Navy sobre Ivory ou Ivory sobre Navy. Gold nunca em corpo de texto, apenas em títulos, filetes e detalhes.</div>
+    </div>
+    <div style="background: #FFFFFF; border: 1px solid #E3DCCB; border-radius: 4px; padding: 22px 24px; display: flex; flex-direction: column; gap: 8px">
+      <div style="font-size: 13px; letter-spacing: 0.26em; text-transform: uppercase; color: #C9A24B">Nunca</div>
+      <div style="font-size: 16px; line-height: 1.55; color: #3C4560">Sem verde e vermelho de alerta, sem neon, sem preto puro. O contraste vem do Navy profundo e do Gold.</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

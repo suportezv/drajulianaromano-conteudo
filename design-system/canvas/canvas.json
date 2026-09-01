@@ -1,0 +1,16 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1280, "h": 760, "title": "Marca" },
+    { "file": "Paleta.dc.html", "x": 0, "y": 900, "w": 1200, "h": 1010 },
+    { "file": "Tipografia.dc.html", "x": 1320, "y": 900, "w": 1200, "h": 1010 },
+    { "file": "CapaMounjaro.dc.html", "x": 0, "y": 2060, "w": 1280, "h": 720, "title": "Capa YouTube · Mounjaro" },
+    { "file": "CapaObesidade.dc.html", "x": 1360, "y": 2060, "w": 1280, "h": 720, "title": "Capa YouTube · Obesidade" },
+    { "file": "CapaInstagram.dc.html", "x": 2760, "y": 2060, "w": 1080, "h": 1350, "title": "Capa Instagram · Body on Top" }
+  ],
+  "annotations": [
+    { "id": "nota-logo", "x": 1360, "y": 40, "w": 300, "text": "O monograma dourado aqui é um desenho aproximado. Substituir pelo arquivo oficial do logo (SVG ou PNG) quando importado." },
+    { "id": "nota-capas", "x": 0, "y": 1970, "w": 420, "text": "Capas com os títulos oficiais do doc Capas 01-09 (prazo 02-09). Trocar os placeholders tracejados pela foto real (pasta FOTOS DRA JU no Drive). O chip Marca acima de cada capa alterna a cor de destaque." },
+    { "id": "nota-fontes", "x": 1320, "y": 2000, "w": 320, "text": "Fontes: Cormorant Garamond (display) e Jost (apoio), via Google Fonts. Na exportação PNG/PDF o texto sai na fonte reserva (Georgia / Segoe UI)." }
+  ],
+  "launch": { "view": "canvas" }
+}
