@@ -23,6 +23,14 @@
       "h": 1220
     },
     {
+      "file": "Voz.dc.html",
+      "x": 2640,
+      "y": 900,
+      "w": 1200,
+      "h": 1160,
+      "title": "Voz e posicionamento"
+    },
+    {
       "file": "CapaMounjaro.dc.html",
       "x": 0,
       "y": 2320,
@@ -53,21 +61,21 @@
       "x": 1360,
       "y": 40,
       "w": 300,
-      "text": "O monograma dourado aqui é um desenho aproximado. Substituir pelo arquivo oficial do logo (SVG ou PNG) quando importado."
+      "text": "Logo oficial extraído do site (dourado #C9AA6E), versões para fundo claro e escuro. Arquivos também em design-system/assets/logo/ no repo do estúdio."
     },
     {
       "id": "nota-capas",
       "x": 0,
       "y": 2230,
       "w": 420,
-      "text": "Capas com os títulos oficiais do doc Capas 01-09 (prazo 02-09). Trocar os placeholders tracejados pela foto real (pasta FOTOS DRA JU no Drive). O chip Marca acima de cada capa alterna a cor de destaque."
+      "text": "Capas com os títulos oficiais do doc Capas 01-09 e a foto oficial recortada do site. O chip Marca acima de cada capa do YouTube alterna a cor de destaque. Na capa do evento, trocar o placeholder pela foto enviada no WhatsApp (não cortar nome e logo do evento)."
     },
     {
       "id": "nota-fontes",
       "x": 1320,
       "y": 2260,
       "w": 320,
-      "text": "Fontes: Cormorant Garamond (display) e Jost (apoio), via Google Fonts. Na exportação PNG/PDF o texto sai na fonte reserva (Georgia / Segoe UI)."
+      "text": "Fontes oficiais do site: Playfair Display (display) e Montserrat (apoio), via Google Fonts. Na exportação PNG/PDF o texto sai na fonte reserva (Georgia / Segoe UI)."
     }
   ],
   "launch": {

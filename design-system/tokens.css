@@ -1,8 +1,8 @@
-/* Design tokens · Dra. Juliana Romano · v1 (2026-09-01) */
+/* Design tokens · Dra. Juliana Romano · v2 (2026-09-01, validado contra o site) */
 :root {
-  /* Primárias */
+  /* Primárias (paleta oficial) */
   --jr-french-blue: #7A96B8;
-  --jr-gold: #C9A24B;
+  --jr-gold: #C9AA6E;          /* dourado exato do logo do site */
   --jr-navy: #2B3A5E;
   /* Apoio */
   --jr-champagne: #E6CFA9;
@@ -10,15 +10,19 @@
   /* Derivadas */
   --jr-navy-ink: #1C2740;      /* texto profundo sobre claro */
   --jr-blue-mist: #BFC9DC;     /* texto secundário sobre navy */
-  --jr-gold-deep: #A8852F;     /* hover/borda do gold */
+  --jr-gold-deep: #A6874B;     /* hover/borda do gold */
   --jr-line: #E3DCCB;          /* bordas sobre ivory */
+  /* Legado (site atual e favicon; não usar em peças novas) */
+  --jr-legacy-petrol-dark: #1F3642;
+  --jr-legacy-petrol-mid: #3B5E70;
+  --jr-legacy-wine: #6F2848;
 
-  /* Tipografia */
-  --jr-font-display: 'Cormorant Garamond', Georgia, serif;
-  --jr-font-body: 'Jost', 'Segoe UI', system-ui, sans-serif;
+  /* Tipografia (fontes oficiais do site) */
+  --jr-font-display: 'Playfair Display', Georgia, serif;
+  --jr-font-body: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
   --jr-h1: 600 64px/1.05 var(--jr-font-display);
   --jr-h2: 600 40px/1.15 var(--jr-font-display);
   --jr-body: 400 18px/1.6 var(--jr-font-body);
-  --jr-eyebrow-tracking: 0.38em;
+  --jr-eyebrow-tracking: 0.34em;
   --jr-caps-tracking: 0.12em;
 }

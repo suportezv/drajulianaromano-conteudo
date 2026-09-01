@@ -7,41 +7,34 @@
 <body>
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Jost:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,700&family=Montserrat:wght@500;600;700;800&display=swap">
   <style>
-    body { margin: 0; background: #F6F1E6; font-family: 'Jost', 'Segoe UI', system-ui, sans-serif; }
-    a { color: #C9A24B; } a:hover { color: #A8852F; }
+    body { margin: 0; background: #F6F1E6; font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif; }
+    a { color: #C9AA6E; } a:hover { color: #A6874B; }
   </style>
 </helmet>
-<div style="width: 1280px; height: 720px; background: #F6F1E6; box-sizing: border-box; display: flex; overflow: hidden">
-  <div style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; gap: 24px; padding: 64px 24px 64px 72px; max-width: 700px">
+<div style="width: 1280px; height: 720px; background: linear-gradient(115deg, #F6F1E6 0%, #F6F1E6 55%, #EBDFC6 100%); box-sizing: border-box; display: flex; overflow: hidden; position: relative">
+  <img src="monograma.png" alt="" style="position: absolute; right: -110px; bottom: -150px; width: 540px; height: auto; opacity: 0.14">
+  <div style="display: flex; flex-direction: column; justify-content: center; gap: 24px; padding: 64px 8px 64px 72px; max-width: 720px; position: relative">
     <div style="display: flex; align-items: center; gap: 14px">
       <div style="width: 44px; height: 3px; background: {{destaque}}"></div>
-      <div style="font-size: 20px; letter-spacing: 0.34em; text-transform: uppercase; color: #2B3A5E; font-weight: 600">Razões da obesidade</div>
+      <div style="font-size: 18px; letter-spacing: 0.32em; text-transform: uppercase; color: #2B3A5E; font-weight: 700">Razões da obesidade</div>
     </div>
-    <div style="display: flex; flex-direction: column; gap: 4px">
-      <div style="font-weight: 700; font-size: 74px; line-height: 1.04; text-transform: uppercase; color: #2B3A5E">Voltou a</div>
-      <div style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; font-size: 128px; line-height: 0.98; text-transform: uppercase; color: {{destaque}}">Engordar?</div>
+    <div style="display: flex; flex-direction: column; gap: 2px">
+      <div style="font-weight: 800; font-size: 70px; line-height: 1.05; text-transform: uppercase; color: #2B3A5E">Voltou a</div>
+      <div style="font-family: 'Playfair Display', Georgia, serif; font-weight: 800; font-style: italic; font-size: 126px; line-height: 1; text-transform: uppercase; color: {{destaque}}">Engordar?</div>
     </div>
     <div style="background: #2B3A5E; border-radius: 4px; padding: 18px 26px; max-width: 560px">
-      <div style="font-size: 30px; line-height: 1.3; color: #F6F1E6; font-weight: 500">Talvez o problema <span style="color: #E6CFA9; font-weight: 700">não seja a comida</span></div>
+      <div style="font-size: 29px; line-height: 1.35; color: #F6F1E6; font-weight: 500">Talvez o problema <span style="color: #C9AA6E; font-weight: 700">não seja a comida</span></div>
     </div>
-    <div style="display: flex; align-items: center; gap: 14px; margin-top: 6px">
-      <svg width="40" height="40" viewBox="0 0 100 100" fill="none">
-        <circle cx="50" cy="50" r="45" stroke="#C9A24B" stroke-width="4"></circle>
-        <path d="M63 7 C 60 38 44 56 9 61" stroke="#C9A24B" stroke-width="4" fill="none"></path>
-        <path d="M91 42 C 60 46 47 62 45 93" stroke="#C9A24B" stroke-width="4" fill="none"></path>
-      </svg>
-      <div style="font-size: 17px; letter-spacing: 0.22em; text-transform: uppercase; color: #6E7FA0">Dra. Juliana Romano</div>
-    </div>
+    <img src="logo-claro.png" alt="Dra. Juliana Romano" style="width: 250px; height: auto; margin-top: 10px">
   </div>
-  <div style="width: 470px; margin: 36px 40px 36px 8px; border: 2px dashed #C9A24B; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; background: rgba(230,207,169,0.28)">
-    <div style="font-size: 15px; letter-spacing: 0.3em; text-transform: uppercase; color: #A8852F">Foto Dra. Ju</div>
-    <div style="font-size: 14px; color: #8A7E5F; max-width: 300px; text-align: center; line-height: 1.5">Recorte olhando para a câmera, expressão acolhedora de dúvida. Pasta FOTOS DRA JU.</div>
+  <div style="position: absolute; right: 24px; bottom: 0; display: flex; align-items: flex-end">
+    <img src="foto-dra-ju.webp" alt="Dra. Juliana Romano" style="height: 680px; width: auto">
   </div>
 </div>
 </x-dc>
-<script data-dc-script data-props='{"destaque":{"editor":"color","default":"#7A96B8","options":["#7A96B8","#C9A24B","#2B3A5E"],"section":"Marca"}}'>
+<script data-dc-script data-props='{"destaque":{"editor":"color","default":"#7A96B8","options":["#7A96B8","#C9AA6E","#2B3A5E"],"section":"Marca"}}'>
 class Component extends DCLogic {
   renderVals() {
     return { destaque: this.props.destaque ?? '#7A96B8' };
