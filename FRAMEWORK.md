@@ -52,6 +52,17 @@ Herdadas do estúdio ana-conteudo (validadas nos testes 01 e 02 e na leva @luxos
 9. Caption
 10. Agendamento no Metricool como rascunho (marca desta criadora; melhor horário: medir após conectar a marca)
 
+## Padrão de thumbnail (YouTube vídeo longo)
+
+Levantado em 2026-09-01 a partir das thumbs desenhadas do canal (ex.: "MOUNJARO REALMENTE FUNCIONA?", "EMAGRECIMENTO MITOS E VERDADES", "EMAGREÇA E NUNCA MAIS ENGORDE!"). Os uploads de jun-ago/2026 saíram sem thumb desenhada (frame automático de vídeo vertical); retomar o padrão:
+
+- **Foto real da Dra. Ju** recortada, à direita ou ao centro, sorrindo ou com expressão de alerta, olhando para a câmera; iluminação quente.
+- **Texto gigante em caixa alta**, fonte condensada bold, 2 a 4 linhas curtas, ocupando a metade esquerda (ou topo+base quando ela está ao centro).
+- **1 a 2 cores de destaque por thumb**: verde para promessa/solução, vermelho para alerta/perigo, sobre branco; fundo em cor sólida (vinho, preto) ou foto limpa desfocada.
+- **Caixas de alto contraste** atrás do texto (retângulo preto com texto branco, badge branco arredondado com texto escuro).
+- **Prop do tema** quando existir: caneta Mounjaro na mão, cápsulas espalhadas, calça larga, setas vermelhas apontando produtos.
+- Sem travessão no lettering; produto citado por nome apenas quando o vídeo já o faz.
+
 ## Gotchas técnicos
 
 Ver a seção "Gotchas essenciais" do `CLAUDE.md` deste repo (herdados e validados no ana-conteudo). Detalhes completos e histórico: repo `suportezv/ana-conteudo`.
