@@ -54,14 +54,15 @@ Herdadas do estúdio ana-conteudo (validadas nos testes 01 e 02 e na leva @luxos
 
 ## Padrão de thumbnail (YouTube vídeo longo)
 
-Levantado em 2026-09-01 a partir das thumbs desenhadas do canal (ex.: "MOUNJARO REALMENTE FUNCIONA?", "EMAGRECIMENTO MITOS E VERDADES", "EMAGREÇA E NUNCA MAIS ENGORDE!"). Os uploads de jun-ago/2026 saíram sem thumb desenhada (frame automático de vídeo vertical); retomar o padrão:
+Validado em 2026-09-01 contra o grid real do canal (screenshot da aba Vídeos, confirmado pelo usuário). O padrão dominante é **thumb de performance, estilo YouTube agressivo**; as thumbs elegantes na paleta da marca NÃO são o padrão das capas de vídeo (a paleta elegante fica para o feed, capas de Instagram, banner e documentos).
 
-- **Foto real da Dra. Ju** recortada, à direita ou ao centro, sorrindo ou com expressão de alerta, olhando para a câmera; iluminação quente.
-- **Texto gigante em caixa alta**, fonte condensada bold, 2 a 4 linhas curtas, ocupando a metade esquerda (ou topo+base quando ela está ao centro).
-- **1 a 2 cores de destaque por thumb**: verde para promessa/solução, vermelho para alerta/perigo, sobre branco; fundo em cor sólida (vinho, preto) ou foto limpa desfocada.
-- **Caixas de alto contraste** atrás do texto (retângulo preto com texto branco, badge branco arredondado com texto escuro).
-- **Prop do tema** quando existir: caneta Mounjaro na mão, cápsulas espalhadas, calça larga, setas vermelhas apontando produtos.
+- **Fundo escuro dramático** (preto/quase preto com glow colorido, fogo, textura) ou o próprio cenário do vídeo saturado e escurecido nas bordas.
+- **Texto gigante em caps, fonte condensada pesada (Anton/Impact-like)**: branco + **amarelo #FFE234** como dupla principal, com **contorno preto grosso** e sombra dura; vermelho para palavras de perigo, verde para promessa/solução. 2 a 4 linhas curtas na metade esquerda.
+- **Selos/badges rotacionados** com borda branca: vermelho "CUIDADO!", verde para afirmação; balões e interrogações quando o tema é dúvida.
+- **Foto dela grande à direita com expressão exagerada** (choque, mão na boca, dedo em riste, mãos na cabeça); frame do próprio vídeo serve, com contraste/saturação levantados.
+- **Props e grafismos**: produto em cena (caneta, caixa de remédio), setas grossas vermelhas/amarelas apontando, X vermelho sobre comida, inset de foto com borda branca.
 - Sem travessão no lettering; produto citado por nome apenas quando o vídeo já o faz.
+- Fluxo prático: extrair frame expressivo do bruto (folha de contato com ffmpeg), recortar a região da pessoa, subir saturação/contraste, compor com texto e grafismos.
 
 ## Gotchas técnicos
 
