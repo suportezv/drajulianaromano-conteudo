@@ -54,7 +54,7 @@ Herdadas do estúdio ana-conteudo (validadas nos testes 01 e 02 e na leva @luxos
 
 ## Padrão de thumbnail (YouTube vídeo longo)
 
-Validado em 2026-09-01 contra o grid real do canal e **aprovado pela agência em 2026-09-02 como padrão fixo para capas de vídeos longos** (capas do Mounjaro e das Razões da Obesidade). O padrão é **thumb de performance, estilo YouTube agressivo**; as thumbs elegantes na paleta da marca NÃO são o padrão das capas de vídeo (a paleta elegante fica para o feed, capas de Instagram, banner e documentos).
+Padrão em duas fases. A v1 (frames de vídeo, usada nas capas do Mounjaro e das Razões da Obesidade) foi **liberada provisoriamente em 2026-09-02 apenas por prazo; NÃO é o padrão aprovado**. O padrão definitivo está em **`design-system/CAPAS.md`**: foto profissional do Drive (nunca frame), fundo ilustrado gerado por IA, rim light/glow e grading amarrando foto ao fundo, prop 3D com seta, texto com gradiente dourado. A base estética segue sendo **thumb de performance, estilo YouTube agressivo**; as thumbs elegantes na paleta da marca NÃO são o padrão das capas de vídeo (a paleta elegante fica para o feed, capas de Instagram, banner e documentos).
 
 - **Fundo escuro dramático** (preto/quase preto com glow colorido, fogo, textura) ou o próprio cenário do vídeo saturado e escurecido nas bordas.
 - **Texto gigante em caps, fonte condensada pesada (Anton/Impact-like)**: branco + **amarelo #FFE234** como dupla principal, com **contorno preto grosso** e sombra dura; vermelho para palavras de perigo, verde para promessa/solução. 2 a 4 linhas curtas na metade esquerda.
