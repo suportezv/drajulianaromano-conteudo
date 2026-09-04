@@ -92,10 +92,10 @@ canvas.paste(c, (px, py), c)
 prop = load('prop.png')
 pb = prop.split()[3].getbbox()
 prop = prop.crop(pb)
-pw = 830
+pw = 920
 pr = pw / prop.width
 prop = prop.resize((pw, int(prop.height * pr)), Image.LANCZOS)
-ppx, ppy = 980, H - prop.height + 60
+ppx, ppy = 1060, H - prop.height + 70
 pg = Image.new('RGBA', (W, H), (0, 0, 0, 0))
 pg.paste(Image.new('RGBA', prop.size, (255, 60, 160, 255)), (ppx, ppy), prop.split()[3])
 pg = pg.filter(ImageFilter.GaussianBlur(55))
@@ -105,8 +105,9 @@ psh = Image.new('RGBA', (W, H), (0, 0, 0, 0))
 psh.paste(Image.new('RGBA', prop.size, (0, 0, 0, 200)), (ppx - 24, ppy + 26), prop.split()[3])
 psh = psh.filter(ImageFilter.GaussianBlur(28))
 canvas = Image.alpha_composite(canvas, psh)
-pc = ImageEnhance.Contrast(prop).enhance(1.1)
-pc = ImageEnhance.Color(pc).enhance(1.15)
+pc = ImageEnhance.Contrast(prop).enhance(1.12)
+pc = ImageEnhance.Color(pc).enhance(1.2)
+pc = ImageEnhance.Brightness(pc).enhance(1.08)
 canvas.paste(pc, (ppx, ppy), pc)
 
 # ---------- texto ----------
@@ -193,7 +194,7 @@ band = hard_shadow(band, (12, 14))
 canvas.paste(band, (95, 905), band)
 
 # interrogacoes amarelas
-for (qx, qy, qs, qr) in ((1500, 90, 240, -14), (2320, 330, 170, 12), (1180, 300, 150, 18)):
+for (qx, qy, qs, qr) in ((1455, 55, 235, -14), (2330, 300, 165, 12)):
     ql = text_layer('?', font(qs), (255, 226, 52, 255), (0, 0, 0, 255), 16)
     ql = hard_shadow(ql.rotate(qr, expand=True, resample=Image.BICUBIC), (8, 10))
     canvas.paste(ql, (qx, qy), ql)
@@ -201,7 +202,7 @@ for (qx, qy, qs, qr) in ((1500, 90, 240, -14), (2320, 330, 170, 12), (1180, 300,
 # seta amarela curva apontando para a balanca
 ar = Image.new('RGBA', (W, H), (0, 0, 0, 0))
 ad = ImageDraw.Draw(ar)
-p0, p1, p2 = (700, 1210), (900, 1330), (1090, 1230)
+p0, p1, p2 = (330, 1160), (620, 1360), (1010, 1290)
 pts = []
 for i in range(41):
     t = i / 40
