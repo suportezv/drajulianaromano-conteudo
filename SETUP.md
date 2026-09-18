@@ -9,15 +9,17 @@ bash scripts/validate.sh
 
 ## Environment (Claude Code cloud)
 
-Usar o environment **"ana-conteudo"** (compartilhado entre os estúdios) ou duplicá-lo. Configura-se no seletor de nuvem acima da caixa de mensagem em claude.ai/code (não nas Configurações gerais). Os estúdios irmãos dizem que mudanças valem só para sessões novas; em 2026-09-18 chaves e hosts novos entraram na sessão aberta. Conferir com `printenv` e `curl -sv ... | grep CONNECT` antes de reiniciar.
+Environment próprio desta marca: **`drajulianaromano-conteudo`** (`env_01Xq5rLD9d9CkcogJEj6kbMU`, criado em 2026-08-18). Conferido em 2026-09-18 por `get_session` e `list_environments`: **cada estúdio tem o seu** (drvictorferigato, drfelipechiota, drjulianofratezi, conjac, porcinia, konjac e este), e **não existe nenhum environment chamado "ana-conteudo"** na conta. A menção a ele em versões anteriores deste arquivo veio do template e estava errada. Consequência prática: allowlist, variáveis e setup script **precisam ser repetidos em cada environment**, um por estúdio.
 
-**Campo de setup script: caminho absoluto, nunca relativo.** O boot roda com o diretório de trabalho no **pai** do repo, então `bash scripts/setup.sh` falha com `No such file or directory` e **exit 127**, e a sessão nasce sem `/workspace`, sem skills e sem ffmpeg. Como o environment "ana-conteudo" serve vários estúdios, o campo não pode citar o nome de um repo. Colar exatamente esta linha:
+Configura-se no seletor de nuvem acima da caixa de mensagem em claude.ai/code (não nas Configurações gerais). Os estúdios irmãos dizem que mudanças valem só para sessões novas; em 2026-09-18 chaves e hosts novos entraram na sessão já aberta. Conferir com `printenv` e `curl -sv ... | grep CONNECT` antes de reiniciar.
+
+**Campo de setup script: caminho absoluto, nunca relativo.** O boot roda com o diretório de trabalho no **pai** do repo, então `bash scripts/setup.sh` falha com `No such file or directory` e **exit 127**, e a sessão nasce sem `/workspace`, sem skills e sem ffmpeg. Colar exatamente esta linha:
 
 ```bash
 for p in ./scripts/setup.sh ./*/scripts/setup.sh; do [ -f "$p" ] && exec bash "$p"; done; p=$(find /home /workspace /repo /app /src -maxdepth 4 -type f -path "*/scripts/setup.sh" 2>/dev/null | head -1); [ -n "$p" ] && exec bash "$p"; echo "setup.sh nao encontrado no repo"; exit 1
 ```
 
-Ela tenta o script na pasta atual, depois em qualquer subpasta (o caso do boot, que roda no pai), e por último procura no disco; o próprio `setup.sh` deriva o `REPO_ROOT` do `BASH_SOURCE`, então funciona seja qual for o diretório. **Testada em 2026-09-18 nos quatro cenários** (raiz do repo, pai, `/tmp` e `/`): os seis passos rodam e sai com **exit 0** em todos. Se um estúdio usar environment próprio, a alternativa fixa é `bash /home/user/<nome-do-repo>/scripts/setup.sh`.
+Ela tenta o script na pasta atual, depois em qualquer subpasta (o caso do boot, que roda no pai), e por último procura no disco; o próprio `setup.sh` deriva o `REPO_ROOT` do `BASH_SOURCE`, então funciona seja qual for o diretório. **Testada em 2026-09-18 nos quatro cenários** (raiz do repo, pai, `/tmp` e `/`): os seis passos rodam e sai com **exit 0** em todos. Como o environment é exclusivo deste estúdio, a alternativa fixa `bash /home/user/drajulianaromano-conteudo/scripts/setup.sh` também funciona; a linha genérica é preferível só porque sobrevive a uma renomeação do repo.
 
 ### Allowlist de rede (Custom)
 
@@ -56,11 +58,12 @@ Para as skills do hyperframes o `raw.githubusercontent.com` não é necessário 
 
 ## Validação final
 
-1. `bash scripts/validate.sh` verde: ffmpeg com `subtitles`/`zscale`, `is_portrait_source` acertando retrato, paisagem e girado, rede, Remotion renderizando 1 frame, browser do HyperFrames, skills registradas.
-2. Metricool: `getBrandSettings` lista "drajulianaromano" com blog_id 6741531.
-3. Kairogen: `get_me_context` mostra plano e créditos.
-4. Smoke dos scripts: `python3 scripts/gera_imagem.py --listar` (responde só com as chaves cadastradas), `python3 scripts/gera_lut_slog2.py /tmp/x.cube --size 17`.
-5. Memória persistente: `CLAUDE.md` deste repo.
+1. Em sessão nova, `ls /workspace` deve listar `browser-use` e `heygen-com` (prova de que o setup script do environment rodou). Vazio significa campo errado.
+2. `bash scripts/validate.sh` verde: ffmpeg com `subtitles`/`zscale`, `is_portrait_source` acertando retrato, paisagem e girado, rede, Remotion renderizando 1 frame, browser do HyperFrames, skills registradas.
+3. Metricool: `getBrandSettings` lista "drajulianaromano" com blog_id 6741531.
+4. Kairogen: `get_me_context` mostra plano e créditos.
+5. Smoke dos scripts: `python3 scripts/gera_imagem.py --listar` (responde só com as chaves cadastradas), `python3 scripts/gera_lut_slog2.py /tmp/x.cube --size 17`.
+6. Memória persistente: `CLAUDE.md` deste repo.
 
 ## Pendências de marca (bloqueiam produção de texto público)
 
