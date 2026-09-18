@@ -32,6 +32,23 @@ Herdadas do estúdio ana-conteudo (validadas nos testes 01 e 02 e na leva @luxos
 - Trilha discreta (vol ~0.12 a 0.15) gerada via ElevenLabs sound-generation; SFX (whoosh, impact, riser, scratch) sincronizados aos cortes.
 - Duração alvo: **20 a 60s**. Loudness final: **-14 LUFS**.
 
+## Escolha do framework de motion: HyperFrames ou Remotion
+
+O estúdio mantém os dois, e a escolha **não é preferência do momento**: cada peça de motion declara o seu na primeira linha do `BRIEFING.md`. Sem isso, quem pegar o projeto depois não sabe onde mexer.
+
+**O que decide**: a ponte entre os dois só existe num sentido. Há a skill `remotion-to-hyperframes`; **não existe o inverso**. Peça feita em HyperFrames é definitiva; peça feita em Remotion ainda pode migrar. Na dúvida, Remotion é a aposta reversível.
+
+| Use **HyperFrames** quando | Use **Remotion** quando |
+|---|---|
+| É peça da série recorrente, na gramática já documentada | A peça é exceção, fora do padrão da série |
+| Você quer o fluxo pronto: brief, storyboard, registry de ~400 blocos, legendas, áudio, render em nuvem | A composição precisa de lógica de programação, dados ou parametrização |
+| O visual pedido já existe no registry (scanlines, glitch, gráfico, janela de terminal) | Você vai gerar **N variações** da mesma peça mudando título, nome, número ou idioma (ex.: cartões de título dos vídeos longos) |
+| Ninguém vai reprocessar a peça em outro framework | Há chance real de a peça mudar de destino depois |
+
+**Padrão declarado: HyperFrames.** É o que está integrado ao fluxo do estúdio e o que tem as 20 skills. O Remotion entra por decisão consciente, e **só depois de confirmar o enquadramento da licença** (grátis até 3 funcionários; o Instituto Romano é empresa, ver gotcha no `CLAUDE.md`).
+
+**Custo de manter os dois, para vigiar**: dois `node_modules`, dois caminhos de render e dois lugares onde a paleta pode divergir. Os tokens do Remotion vivem em `remotion/src/marca.ts` e espelham `design-system/tokens.json`; **se a paleta mudar, atualizar os dois**. Se em alguns meses o Remotion não tiver sido usado em nada, vira peso morto e se corta; o inverso não vale.
+
 ## Fórmula da caption
 
 1. Hook em 1 linha (dor ou cena concreta, sem travessão)

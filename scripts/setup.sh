@@ -120,14 +120,22 @@ else
   echo "remotion/package.json ausente; passo pulado"
 fi
 
-echo "== 5/6 Python (PIL para overlays, numpy para batidas) =="
+echo "== 5/6 Python (PIL para overlays, numpy para batidas, colour-science para a LUT S-Log2) =="
 python3 -c 'import PIL' 2>/dev/null || pip3 install pillow || echo "AVISO: pillow não instalado (pypi bloqueado). Lettering/overlays indisponíveis."
 python3 -c 'import numpy' 2>/dev/null || pip3 install numpy || echo "AVISO: numpy não instalado (pypi bloqueado). Detecção de batidas indisponível."
+python3 -c 'import colour' 2>/dev/null || pip3 install -q colour-science || echo "AVISO: colour-science não instalado (pypi bloqueado). scripts/gera_lut_slog2.py indisponível."
 
 echo "== 6/6 estúdio =="
 STUDIO_NAME="$(basename "$REPO_ROOT")"
 ln -sfn "$REPO_ROOT" ~/"$STUDIO_NAME"
 echo "~/$STUDIO_NAME -> $REPO_ROOT"
+
+# Fontes da marca versionadas em assets/fonts (Google Fonts esta fora da allowlist).
+# Em ~/.fonts o fontconfig as expoe ao headless_shell (Remotion) e ao Chromium.
+if ls "$REPO_ROOT"/assets/fonts/*.ttf >/dev/null 2>&1; then
+  mkdir -p ~/.fonts && cp "$REPO_ROOT"/assets/fonts/*.ttf ~/.fonts/ && (fc-cache -f >/dev/null 2>&1 || true)
+  echo "$(ls "$REPO_ROOT"/assets/fonts/*.ttf | wc -l) fontes de assets/fonts instaladas em ~/.fonts"
+fi
 
 # Propaga a chave da ElevenLabs do environment para o .env do video-use.
 if [ ! -f "$VIDEO_USE/.env" ] && [ -n "${ELEVENLABS_API_KEY:-}" ]; then
