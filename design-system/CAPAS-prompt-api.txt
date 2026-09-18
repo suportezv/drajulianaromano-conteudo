@@ -1,16 +1,18 @@
 Capa de YouTube 16:9, estilo "thumb de performance" agressivo, alto contraste, legivel em miniatura pequena.
 
-PESSOA: use a mulher da foto anexa. Mantenha fielmente o rosto, a idade, o cabelo preso, o blazer preto e a pose de maos na cintura. Recorte ela do fundo original e coloque no lado direito do quadro, ocupando cerca de 45% da largura, em corpo do joelho para cima, ancorada na base, olhando para a camera com expressao seria e confiante. Nao invente outro rosto, nao rejuvenesca, nao mude o penteado, nao acrescente joias, tatuagens ou unhas diferentes das que aparecem na foto.
+PESSOA: gere uma nova imagem fotorrealista da mesma mulher das fotos de referencia. As fotos servem so para a semelhanca: mesmo rosto, mesma idade, mesmo tom de pele, mesmo cabelo loiro. NAO copie a pose nem reaproveite a foto. Crie uma cena nova, com iluminacao de estudio para capa, do quadril para cima, no lado direito do quadro ocupando cerca de 45 por cento da largura, ancorada na base. Ela veste blazer preto estruturado sobre blusa preta. Realismo fotografico total: pele com textura real, maos com cinco dedos corretos, nenhuma deformacao.
+
+EXPRESSAO E GESTO, o ponto mais importante desta imagem: ela leva a mao aberta ao proprio peito, gesto de acolhimento, e inclina o corpo levemente para a frente em direcao a camera. Sobrancelhas erguidas no meio, olhar de empatia intensa, de quem revela uma verdade dificil, boca entreaberta como se estivesse falando agora. Nada de sorriso.
 
 FUNDO: cena escura e dramatica em azul petroleo e roxo profundo, com fumaca sutil, particulas douradas e feixes de luz saindo de tras dela. Vinheta forte nas bordas. O lado esquerdo bem mais escuro, para o texto respirar.
 
-LUZ: contraluz dourado contornando a silhueta dela, sombra projetada suave no fundo, pele tratada, contraste e nitidez altos, acabamento de capa profissional.
+LUZ: contraluz dourado contornando a silhueta dela, sombra projetada suave no fundo, contraste e nitidez altos, acabamento de capa profissional.
 
 TEXTO na coluna esquerda, tudo em caixa alta, fonte condensada extra bold estilo Anton, com contorno preto grosso e sombra dura:
 Linha 1, menor, em branco: SEU CORPO NAO QUER
 Linha 2, bem maior, colada na linha 1, preenchida com gradiente vertical dourado do amarelo claro para o ambar escuro: EMAGRECER
 Abaixo do bloco, uma faixa vermelha solida levemente inclinada, com o texto em branco: ELE QUER TE PROTEGER
 
-PROP: um cadeado dourado grande e fechado, em 3D realista, flutuando entre o texto e ela, com brilho e sombra propria. Uma seta amarela grossa com contorno preto sai da faixa vermelha e aponta para o cadeado.
+PROP: um cadeado dourado grande e fechado, em 3D realista, entre o texto e ela, com brilho e sombra propria. Uma seta amarela grossa com contorno preto sai da faixa vermelha e aponta para o cadeado.
 
-REGRAS: escreva exatamente estes textos em portugues, com os acentos corretos: "SEU CORPO NÃO QUER", "EMAGRECER", "ELE QUER TE PROTEGER". Nenhum outro texto, nenhum numero, nenhuma logo, nenhuma marca d'agua. Nunca usar travessao. Mantenha a metade esquerda limpa e legivel quando a imagem for reduzida a 320 pixels de largura.
+REGRAS: escreva exatamente estes textos em portugues, com os acentos corretos: "SEU CORPO NÃO QUER", "EMAGRECER", "ELE QUER TE PROTEGER". Nenhum outro texto, nenhum numero, nenhuma logo, nenhuma marca d agua. Nunca usar travessao. Mantenha a metade esquerda limpa e legivel quando a imagem for reduzida a 320 pixels de largura.

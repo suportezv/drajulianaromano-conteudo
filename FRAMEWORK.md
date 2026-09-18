@@ -76,7 +76,7 @@ Padrão em duas fases. A v1 (frames de vídeo, usada nas capas do Mounjaro e das
 - **Fundo escuro dramático** (preto/quase preto com glow colorido, fogo, textura) ou o próprio cenário do vídeo saturado e escurecido nas bordas.
 - **Texto gigante em caps, fonte condensada pesada (Anton/Impact-like)**: branco + **amarelo #FFE234** como dupla principal, com **contorno preto grosso** e sombra dura; vermelho para palavras de perigo, verde para promessa/solução. 2 a 4 linhas curtas na metade esquerda.
 - **Selos/badges rotacionados** com borda branca: vermelho "CUIDADO!", verde para afirmação; balões e interrogações quando o tema é dúvida.
-- **Foto dela grande à direita com expressão exagerada** (choque, mão na boca, dedo em riste, mãos na cabeça); frame do próprio vídeo serve, com contraste/saturação levantados.
+- **Imagem dela grande à direita, sempre GERADA por IA** (`scripts/gera_imagem.py --ref`), nunca foto colada nem frame de vídeo: as fotos do ensaio servem só como referência de semelhança. A **expressão e o gesto precisam traduzir a tese do vídeo** (mão no peito para acolhimento, palma erguida para alerta, olhos arregalados para revelação). Quanto mais exagerada a expressão, mais o rosto deriva: conferir no QC lado a lado, ver `CLAUDE.md`.
 - **Props e grafismos**: produto em cena (caneta, caixa de remédio), setas grossas vermelhas/amarelas apontando, X vermelho sobre comida, inset de foto com borda branca.
 - Sem travessão no lettering; produto citado por nome apenas quando o vídeo já o faz.
 - Fluxo prático: extrair frame expressivo do bruto (folha de contato com ffmpeg), recortar a região da pessoa, subir saturação/contraste, compor com texto e grafismos.
