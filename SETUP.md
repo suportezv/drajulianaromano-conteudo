@@ -11,11 +11,13 @@ bash scripts/validate.sh
 
 Usar o environment **"ana-conteudo"** (compartilhado entre os estúdios) ou duplicá-lo. Configura-se no seletor de nuvem acima da caixa de mensagem em claude.ai/code (não nas Configurações gerais). Os estúdios irmãos dizem que mudanças valem só para sessões novas; em 2026-09-18 chaves e hosts novos entraram na sessão aberta. Conferir com `printenv` e `curl -sv ... | grep CONNECT` antes de reiniciar.
 
-**Campo de setup script: caminho absoluto, nunca relativo.** O boot roda com o diretório de trabalho no pai do repo, então `bash scripts/setup.sh` falha com exit 127 e a sessão nasce sem `/workspace`. Como o environment serve vários estúdios, usar a versão que não depende do nome:
+**Campo de setup script: caminho absoluto, nunca relativo.** O boot roda com o diretório de trabalho no **pai** do repo, então `bash scripts/setup.sh` falha com `No such file or directory` e **exit 127**, e a sessão nasce sem `/workspace`, sem skills e sem ffmpeg. Como o environment "ana-conteudo" serve vários estúdios, o campo não pode citar o nome de um repo. Colar exatamente esta linha:
 
 ```bash
 for p in ./scripts/setup.sh ./*/scripts/setup.sh; do [ -f "$p" ] && exec bash "$p"; done; p=$(find /home /workspace /repo /app /src -maxdepth 4 -type f -path "*/scripts/setup.sh" 2>/dev/null | head -1); [ -n "$p" ] && exec bash "$p"; echo "setup.sh nao encontrado no repo"; exit 1
 ```
+
+Ela tenta o script na pasta atual, depois em qualquer subpasta (o caso do boot, que roda no pai), e por último procura no disco; o próprio `setup.sh` deriva o `REPO_ROOT` do `BASH_SOURCE`, então funciona seja qual for o diretório. **Testada em 2026-09-18 nos quatro cenários** (raiz do repo, pai, `/tmp` e `/`): os seis passos rodam e sai com **exit 0** em todos. Se um estúdio usar environment próprio, a alternativa fixa é `bash /home/user/<nome-do-repo>/scripts/setup.sh`.
 
 ### Allowlist de rede (Custom)
 
