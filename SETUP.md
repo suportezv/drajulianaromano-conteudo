@@ -30,8 +30,10 @@ A entrada é literal por subdomínio (`www.googleapis.com` não cobre `generativ
 | `api.openai.com` | imagem por GPT (`gera_imagem.py`) | OK (liberado em 2026-09-18) |
 | `generativelanguage.googleapis.com` | imagem por Gemini (`gera_imagem.py`) | OK (liberado em 2026-09-18) |
 | `www.googleapis.com` | upload para o Drive (`sobe_para_drive.py`) | OK (liberado em 2026-09-18) |
+| `cdn.jsdelivr.net` | GSAP de todo scaffold, exemplo e bloco do HyperFrames | **403, liberar** (sem isso o render só passa com GSAP local) |
+| `raw.githubusercontent.com` | registry de blocos do HyperFrames (`hyperframes add`, `catalog`) | **403, liberar** se for usar o registry |
 
-`raw.githubusercontent.com` não precisa: o setup registra as skills do hyperframes a partir do clone local.
+Para as skills do hyperframes o `raw.githubusercontent.com` não é necessário (o setup registra a partir do clone local); só o registry de blocos depende dele.
 
 ### Variáveis de ambiente (nunca em arquivo do repo, nunca no chat)
 
@@ -41,6 +43,7 @@ A entrada é literal por subdomínio (`www.googleapis.com` não cobre `generativ
 | `OPENAI_API_KEY` | `gera_imagem.py openai` | presente; geração real validada em 2026-09-18 |
 | `GEMINI_API_KEY` | `gera_imagem.py gemini` (chave válida não é quota: o projeto precisa estar no faturamento) | presente; geração real validada em 2026-09-18, quota OK |
 | `GOOGLE_OAUTH_TOKEN` | `sobe_para_drive.py` (gerado no OAuth Playground, escopo `drive.file`, vale 1 h) | sob demanda |
+| `HYPERFRAMES_BROWSER_PATH` | browser de render do HyperFrames (headless_shell do Playwright) | o `setup.sh` grava em `~/.bashrc` e `~/.profile`; não é segredo |
 
 ## Conectores (cada um exige ação do usuário)
 
@@ -51,7 +54,7 @@ A entrada é literal por subdomínio (`www.googleapis.com` não cobre `generativ
 
 ## Validação final
 
-1. `bash scripts/validate.sh` verde: ffmpeg com `subtitles`/`zscale`, `is_portrait_source` acertando retrato, paisagem e girado, rede, Remotion renderizando 1 frame, skills registradas.
+1. `bash scripts/validate.sh` verde: ffmpeg com `subtitles`/`zscale`, `is_portrait_source` acertando retrato, paisagem e girado, rede, Remotion renderizando 1 frame, browser do HyperFrames, skills registradas.
 2. Metricool: `getBrandSettings` lista "drajulianaromano" com blog_id 6741531.
 3. Kairogen: `get_me_context` mostra plano e créditos.
 4. Smoke dos scripts: `python3 scripts/gera_imagem.py --listar` (responde só com as chaves cadastradas), `python3 scripts/gera_lut_slog2.py /tmp/x.cube --size 17`.

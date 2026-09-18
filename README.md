@@ -5,7 +5,7 @@ Estúdio de edição e agendamento de conteúdo para as redes da **Dra. Juliana 
 - **`FRAMEWORK.md`**: persona, regras, pilares, assinaturas de edição, escolha do framework de motion e fluxo por vídeo.
 - **`CLAUDE.md`**: memória persistente do projeto (IDs, contas, gotchas, cinto de ferramentas).
 - **`projects/`**: um subdiretório por vídeo (briefing, transcrição, scripts de edição, caption).
-- **`scripts/`**: setup e validação do ambiente (Linux/cloud) e as ferramentas genéricas de produção (abaixo).
+- **`scripts/`**: setup e validação do ambiente (Linux/cloud), o wrapper `hyperframes.sh` (browser e proxy certos em qualquer shell) e as ferramentas genéricas de produção (abaixo).
 - **`remotion/`**: composições React (cartões de título 1080x1920 e 1080x1080). Paleta e fonte só em `remotion/src/marca.ts`.
 - **`design-system/`**: tokens, logo, canvas e o estudo das capas de YouTube.
 - **`assets/fonts/`**: Playfair Display e Montserrat locais (Google Fonts fica fora da allowlist).

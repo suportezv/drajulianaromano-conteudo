@@ -61,8 +61,8 @@ for D in https://drive.google.com/ https://drive.usercontent.google.com/ https:/
   if [ "$C" = "000" ]; then echo "FALHOU $D (000: domínio não liberado)"; else echo "OK $D (HTTP $C)"; fi
 done
 
-echo "-- opcionais (gera_imagem.py e sobe_para_drive.py; AVISO, nao falha) --"
-for D in https://api.openai.com/ https://generativelanguage.googleapis.com/ https://www.googleapis.com/; do
+echo "-- opcionais (gera_imagem.py, sobe_para_drive.py, HyperFrames; AVISO, nao falha) --"
+for D in https://api.openai.com/ https://generativelanguage.googleapis.com/ https://www.googleapis.com/ https://cdn.jsdelivr.net/ https://raw.githubusercontent.com/; do
   C=$(curl -s -o /dev/null -w "%{http_code}" --max-time 20 "$D")
   if [ "$C" = "000" ] || [ "$C" = "403" ]; then echo "AVISO $D (HTTP $C: fora da allowlist do environment)"; else echo "OK $D (HTTP $C)"; fi
 done
@@ -87,6 +87,14 @@ else
     fi
     rm -rf "$(dirname "$_png")"
   fi
+fi
+
+echo "== 5b. HyperFrames: browser de render =="
+export HYPERFRAMES_BROWSER_PATH="${HYPERFRAMES_BROWSER_PATH:-/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell}"
+if [ -x "$HYPERFRAMES_BROWSER_PATH" ]; then
+  echo "OK browser em $HYPERFRAMES_BROWSER_PATH (usar scripts/hyperframes.sh; cdn.jsdelivr.net acima decide se o GSAP carrega)"
+else
+  echo "FALHA: HYPERFRAMES_BROWSER_PATH nao aponta para um executavel"
 fi
 
 echo "== 6. Skills registradas =="

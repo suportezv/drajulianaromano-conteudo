@@ -106,6 +106,20 @@ if ! npx --yes hyperframes skills update 2>/dev/null; then
   echo "$n skills do hyperframes registradas a partir de $HYPERFRAMES/skills"
 fi
 
+echo "== 3b/6 HyperFrames: browser de render =="
+# O `hyperframes browser ensure` baixa um Chrome de host fora da allowlist (trava).
+# O headless_shell do Playwright ja esta no container e o HyperFrames aceita
+# HYPERFRAMES_BROWSER_PATH; persistimos no perfil do shell para as sessoes seguintes.
+HF_BROWSER="/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell"
+if [ -x "$HF_BROWSER" ]; then
+  for rc in ~/.bashrc ~/.profile; do
+    grep -q 'HYPERFRAMES_BROWSER_PATH' "$rc" 2>/dev/null || printf '\nexport HYPERFRAMES_BROWSER_PATH="%s"\n' "$HF_BROWSER" >> "$rc"
+  done
+  echo "HYPERFRAMES_BROWSER_PATH -> $HF_BROWSER (gravado em ~/.bashrc e ~/.profile)"
+else
+  echo "AVISO: headless_shell do Playwright ausente; render local do HyperFrames indisponivel"
+fi
+
 echo "== 4/6 Remotion =="
 # O Remotion e React; as composicoes ficam versionadas em remotion/ e so as
 # dependencias sao instaladas aqui. O render usa o headless_shell do Playwright
