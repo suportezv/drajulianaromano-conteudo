@@ -92,7 +92,7 @@ fi
 echo "== 5b. HyperFrames: browser de render =="
 export HYPERFRAMES_BROWSER_PATH="${HYPERFRAMES_BROWSER_PATH:-/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell}"
 if [ -x "$HYPERFRAMES_BROWSER_PATH" ]; then
-  echo "OK browser em $HYPERFRAMES_BROWSER_PATH (usar scripts/hyperframes.sh; cdn.jsdelivr.net acima decide se o GSAP carrega)"
+  echo "OK browser em $HYPERFRAMES_BROWSER_PATH (chamar sempre por scripts/hyperframes.sh; o browser nao confia na CA do proxy, entao asset remoto so com scripts/vendor_gsap.sh)"
 else
   echo "FALHA: HYPERFRAMES_BROWSER_PATH nao aponta para um executavel"
 fi

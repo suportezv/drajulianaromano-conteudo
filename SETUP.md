@@ -30,8 +30,8 @@ A entrada é literal por subdomínio (`www.googleapis.com` não cobre `generativ
 | `api.openai.com` | imagem por GPT (`gera_imagem.py`) | OK (liberado em 2026-09-18) |
 | `generativelanguage.googleapis.com` | imagem por Gemini (`gera_imagem.py`) | OK (liberado em 2026-09-18) |
 | `www.googleapis.com` | upload para o Drive (`sobe_para_drive.py`) | OK (liberado em 2026-09-18) |
-| `cdn.jsdelivr.net` | GSAP de todo scaffold, exemplo e bloco do HyperFrames | **403, liberar** (sem isso o render só passa com GSAP local) |
-| `raw.githubusercontent.com` | registry de blocos do HyperFrames (`hyperframes add`, `catalog`) | **403, liberar** se for usar o registry |
+| `cdn.jsdelivr.net` | GSAP de todo scaffold, exemplo e bloco do HyperFrames | OK (liberado em 2026-09-18) |
+| `raw.githubusercontent.com` | registry de blocos do HyperFrames (`hyperframes add`, `catalog`) | OK (liberado em 2026-09-18; `catalog` lista ~400 blocos) |
 
 Para as skills do hyperframes o `raw.githubusercontent.com` não é necessário (o setup registra a partir do clone local); só o registry de blocos depende dele.
 
@@ -43,7 +43,7 @@ Para as skills do hyperframes o `raw.githubusercontent.com` não é necessário 
 | `OPENAI_API_KEY` | `gera_imagem.py openai` | presente; geração real validada em 2026-09-18 |
 | `GEMINI_API_KEY` | `gera_imagem.py gemini` (chave válida não é quota: o projeto precisa estar no faturamento) | presente; geração real validada em 2026-09-18, quota OK |
 | `GOOGLE_OAUTH_TOKEN` | `sobe_para_drive.py` (gerado no OAuth Playground, escopo `drive.file`, vale 1 h) | sob demanda |
-| `HYPERFRAMES_BROWSER_PATH` | browser de render do HyperFrames (headless_shell do Playwright) | o `setup.sh` grava em `~/.bashrc` e `~/.profile`; não é segredo |
+| `HYPERFRAMES_BROWSER_PATH` | browser de render do HyperFrames (headless_shell do Playwright) | o `setup.sh` grava no perfil, mas o que vale é o wrapper `scripts/hyperframes.sh` |
 
 ## Conectores (cada um exige ação do usuário)
 
@@ -63,3 +63,8 @@ Para as skills do hyperframes o `raw.githubusercontent.com` não é necessário 
 ## Pendências de marca (bloqueiam produção de texto público)
 
 Ver as seções marcadas **PENDENTE** no `FRAMEWORK.md`: persona e tom, CTA da caption, pilares, cor de acento do lettering e voz da ElevenLabs.
+
+## Limitação conhecida do container (não é allowlist)
+
+O Chromium não confia na CA do agent proxy: o banco NSS dele está vazio e o `certutil` não pode ser instalado (o apt responde 403). Com isso, qualquer asset remoto por HTTPS falha com `ERR_CERT_AUTHORITY_INVALID` quando o `check`, o `preview` ou o `validate` do HyperFrames abrem a página. O `render` não sofre, porque o compilador baixa pelo Node e embute. Regra do estúdio: **asset local**, com `bash scripts/vendor_gsap.sh <projeto>` antes do primeiro `check`. Nunca desligar verificação de TLS.
+
