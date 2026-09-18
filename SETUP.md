@@ -9,7 +9,7 @@ bash scripts/validate.sh
 
 ## Environment (Claude Code cloud)
 
-Usar o environment **"ana-conteudo"** (compartilhado entre os estúdios) ou duplicá-lo. Configura-se no seletor de nuvem acima da caixa de mensagem em claude.ai/code (não nas Configurações gerais). **Mudanças valem só para sessões novas.**
+Usar o environment **"ana-conteudo"** (compartilhado entre os estúdios) ou duplicá-lo. Configura-se no seletor de nuvem acima da caixa de mensagem em claude.ai/code (não nas Configurações gerais). Os estúdios irmãos dizem que mudanças valem só para sessões novas; em 2026-09-18 chaves e hosts novos entraram na sessão aberta. Conferir com `printenv` e `curl -sv ... | grep CONNECT` antes de reiniciar.
 
 **Campo de setup script: caminho absoluto, nunca relativo.** O boot roda com o diretório de trabalho no pai do repo, então `bash scripts/setup.sh` falha com exit 127 e a sessão nasce sem `/workspace`. Como o environment serve vários estúdios, usar a versão que não depende do nome:
 
@@ -27,9 +27,9 @@ A entrada é literal por subdomínio (`www.googleapis.com` não cobre `generativ
 | `api.elevenlabs.io` | TTS, STT, SFX | OK |
 | `github.com`, `api.github.com`, `objects.githubusercontent.com` | ffmpeg estático, clones, fontes | OK |
 | `pypi.org`, `files.pythonhosted.org`, `registry.npmjs.org` | Python e Remotion (o setup roteia pelo agent proxy) | OK |
-| `api.openai.com` | imagem por GPT (`gera_imagem.py`) | **403, liberar** |
-| `generativelanguage.googleapis.com` | imagem por Gemini (`gera_imagem.py`) | **403, liberar** |
-| `www.googleapis.com` | upload para o Drive (`sobe_para_drive.py`) | **403, liberar** |
+| `api.openai.com` | imagem por GPT (`gera_imagem.py`) | OK (liberado em 2026-09-18) |
+| `generativelanguage.googleapis.com` | imagem por Gemini (`gera_imagem.py`) | OK (liberado em 2026-09-18) |
+| `www.googleapis.com` | upload para o Drive (`sobe_para_drive.py`) | OK (liberado em 2026-09-18) |
 
 `raw.githubusercontent.com` não precisa: o setup registra as skills do hyperframes a partir do clone local.
 
@@ -38,8 +38,8 @@ A entrada é literal por subdomínio (`www.googleapis.com` não cobre `generativ
 | Variável | Para quê | Estado |
 |---|---|---|
 | `ELEVENLABS_API_KEY` | TTS, STT (Scribe), sound-generation | presente (`sk_`, 51 chars; plano free) |
-| `OPENAI_API_KEY` | `gera_imagem.py openai` | **ausente** |
-| `GEMINI_API_KEY` | `gera_imagem.py gemini` (chave válida não é quota: o projeto precisa estar no faturamento) | **ausente** |
+| `OPENAI_API_KEY` | `gera_imagem.py openai` | presente; geração real validada em 2026-09-18 |
+| `GEMINI_API_KEY` | `gera_imagem.py gemini` (chave válida não é quota: o projeto precisa estar no faturamento) | presente; geração real validada em 2026-09-18, quota OK |
 | `GOOGLE_OAUTH_TOKEN` | `sobe_para_drive.py` (gerado no OAuth Playground, escopo `drive.file`, vale 1 h) | sob demanda |
 
 ## Conectores (cada um exige ação do usuário)

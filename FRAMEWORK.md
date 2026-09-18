@@ -45,7 +45,7 @@ O estúdio mantém os dois, e a escolha **não é preferência do momento**: cad
 | O visual pedido já existe no registry (scanlines, glitch, gráfico, janela de terminal) | Você vai gerar **N variações** da mesma peça mudando título, nome, número ou idioma (ex.: cartões de título dos vídeos longos) |
 | Ninguém vai reprocessar a peça em outro framework | Há chance real de a peça mudar de destino depois |
 
-**Padrão declarado: HyperFrames.** É o que está integrado ao fluxo do estúdio e o que tem as 20 skills. O Remotion entra por decisão consciente, e **só depois de confirmar o enquadramento da licença** (grátis até 3 funcionários; o Instituto Romano é empresa, ver gotcha no `CLAUDE.md`).
+**Padrão declarado: HyperFrames.** É o que está integrado ao fluxo do estúdio e o que tem as 20 skills. O Remotion entra por decisão consciente. Licença (decisão de 2026-09-18): uso do Remotion aqui é **estudo e avaliação, não comercial**, o que cabe na Free License; antes de um render do Remotion entrar em peça publicada para a cliente, conferir o quadro de funcionários da agência (até 3 segue grátis; acima, Company License). Detalhe no gotcha do `CLAUDE.md`.
 
 **Custo de manter os dois, para vigiar**: dois `node_modules`, dois caminhos de render e dois lugares onde a paleta pode divergir. Os tokens do Remotion vivem em `remotion/src/marca.ts` e espelham `design-system/tokens.json`; **se a paleta mudar, atualizar os dois**. Se em alguns meses o Remotion não tiver sido usado em nada, vira peso morto e se corta; o inverso não vale.
 

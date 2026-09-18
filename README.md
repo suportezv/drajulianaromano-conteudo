@@ -39,6 +39,6 @@ Todas genéricas (nenhuma referência de marca) e lendo chaves **só** de variá
 | Metricool | Agendamento | Marca **drajulianaromano**, blog_id **6741531** (Instagram, TikTok, YouTube) |
 | ElevenLabs | Transcrição, trilha, SFX, TTS | `ELEVENLABS_API_KEY` (`sk_...`, 51 chars) na env var do environment; o setup grava no `.env` do video-use |
 | Kairogen | B-roll por IA | Conta suporte@zavi.ag, **FREE com 0 créditos** (2026-09-18) |
-| OpenAI / Gemini | Imagem por `gera_imagem.py` | `OPENAI_API_KEY` / `GEMINI_API_KEY` + hosts liberados: **pendentes neste environment** |
+| OpenAI / Gemini | Imagem por `gera_imagem.py` | `OPENAI_API_KEY` / `GEMINI_API_KEY` presentes e hosts liberados; geração real validada em 2026-09-18 |
 
 > Este repositório é **público** de propósito: o agendamento no Metricool depende de servir mídia por `raw.githubusercontent.com`. Nunca commitar chaves aqui.
